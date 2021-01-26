@@ -1,4 +1,4 @@
-package com.finance.finance.user.entity;
+package com.finance.finance.entities.user;
 
 import java.util.HashMap;
 import java.util.List;
@@ -7,8 +7,6 @@ import java.util.Map;
 import javax.validation.Valid;
 
 import com.finance.finance.ResourceNotFoundException;
-import com.finance.finance.user.entity.User;
-import com.finance.finance.user.entity.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
