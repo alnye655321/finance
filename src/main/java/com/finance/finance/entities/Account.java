@@ -1,9 +1,6 @@
-package com.finance.finance.entities.account;
+package com.finance.finance.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.finance.finance.entities.user.User;
-import com.finance.finance.entities.user.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -19,6 +16,10 @@ public class Account {
     @ManyToMany
     private Set<User> linkedUsers;
 
+    @ManyToOne
+    @JoinColumn(name="accountType_id", nullable=false)
+    private AccountType accountType;
+
     @Column(name = "balance")
     private double balance;
 
@@ -32,6 +33,10 @@ public class Account {
     @Column(name = "dateClosed")
     @JsonFormat(pattern="yyyy-MM-dd")
     private java.sql.Date dateClosed;
+
+
+    public Account() {
+    }
 
     public Account(long linkedUser, double balance, double interestRate, Date dateOpened, Date dateClosed) {
         this.linkedUsers = linkedUsers;

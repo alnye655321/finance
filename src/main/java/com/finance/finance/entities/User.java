@@ -1,6 +1,6 @@
-package com.finance.finance.entities.user;
+package com.finance.finance.entities;
 
-import com.finance.finance.entities.account.Account;
+import com.finance.finance.entities.Account;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -8,16 +8,6 @@ import java.util.Set;
 @Entity
 @Table(name = "users")
 public class User {
-
-    public User() {
-
-    }
-
-    public User(String name, String hashedPassword, String email) {
-        this.name = name;
-        this.hashedPassword = hashedPassword;
-        this.email = email;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +17,7 @@ public class User {
     private String name;
 
 
-    @Column(name = "hashedPassword", nullable = false)
+    @Column(name = "hashed_password", nullable = false)
     private String hashedPassword;
 
 
@@ -41,6 +31,17 @@ public class User {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "account_id"))
     private Set<Account> linkedAccounts;
+
+
+    public User() {
+
+    }
+
+    public User(String name, String hashedPassword, String email) {
+        this.name = name;
+        this.hashedPassword = hashedPassword;
+        this.email = email;
+    }
 
 
     public long getId() {

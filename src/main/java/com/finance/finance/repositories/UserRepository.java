@@ -1,5 +1,6 @@
-package com.finance.finance.entities.user;
+package com.finance.finance.repositories;
 
+import com.finance.finance.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
