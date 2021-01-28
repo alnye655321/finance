@@ -11,7 +11,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long userId;
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -27,7 +27,6 @@ public class User {
 
     @ManyToMany
     @JoinTable(
-            name = "user_account",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "account_id"))
     private Set<Account> linkedAccounts;
@@ -44,12 +43,12 @@ public class User {
     }
 
 
-    public long getId() {
-        return id;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setUserId(long id) {
+        this.userId = id;
     }
 
     public String getName() {
@@ -86,7 +85,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User [id=" + id + ", name=" + name + ", hashPassword=" + hashedPassword + ", email=" + email
+        return "User [id=" + userId + ", name=" + name + ", hashPassword=" + hashedPassword + ", email=" + email
                 + "]";
     }
 

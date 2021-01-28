@@ -11,26 +11,26 @@ import java.util.Set;
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long accountId;
 
     @ManyToMany
     private Set<User> linkedUsers;
 
     @ManyToOne
-    @JoinColumn(name="accountType_id", nullable=false)
+    @JoinColumn(name="account_type_id", nullable=false)
     private AccountType accountType;
 
     @Column(name = "balance")
     private double balance;
 
-    @Column(name = "interestRate")
+    @Column(name = "interest_rate")
     private double interestRate;
 
-    @Column(name = "dateOpened")
+    @Column(name = "date_opened")
     @JsonFormat(pattern="yyyy-MM-dd")
     private java.sql.Date dateOpened;
 
-    @Column(name = "dateClosed")
+    @Column(name = "date_closed")
     @JsonFormat(pattern="yyyy-MM-dd")
     private java.sql.Date dateClosed;
 
@@ -50,11 +50,11 @@ public class Account {
 
     }
 
-    public long getId() {
-        return id;
+    public long getAccountId() {
+        return accountId;
     }
-    public void setId(long id) {
-        this.id = id;
+    public void setAccountId(long id) {
+        this.accountId = id;
     }
 
     public Set<User> getLinkedUsers() {

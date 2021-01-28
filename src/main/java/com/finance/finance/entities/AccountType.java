@@ -6,13 +6,13 @@ import java.util.Set;
 
 
 @Entity
-@Table(name = "accountTypes")
+@Table(name = "account_types")
 public class AccountType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long accountTypeId;
 
-    @Column(name = "accountType")
+    @Column(name = "account_type")
     private String accountType;
 
     @OneToMany(mappedBy="accountType")
@@ -25,12 +25,12 @@ public class AccountType {
         this.accountType = accountType;
     }
 
-    public long getId() {
-        return id;
+    public long getAccountTypeId() {
+        return accountTypeId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setAccountTypeId(long id) {
+        this.accountTypeId = id;
     }
 
     public String getAccountType() {
