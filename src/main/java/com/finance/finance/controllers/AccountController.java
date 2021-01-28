@@ -24,6 +24,8 @@ public class AccountController {
 
     @GetMapping("/accounts")
     public List<Account> getAllAccounts() {
+        List<Account> accounts = accountRepository.findAll();
+        System.out.println("test");
         return accountRepository.findAll();
     }
 

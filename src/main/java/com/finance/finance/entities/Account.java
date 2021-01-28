@@ -1,6 +1,7 @@
 package com.finance.finance.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -26,27 +27,26 @@ public class Account {
     @Column(name = "interest_rate")
     private double interestRate;
 
-    @Column(name = "date_opened")
     @JsonFormat(pattern="yyyy-MM-dd")
+    @Column(name = "date_opened")
     private java.sql.Date dateOpened;
 
-    @Column(name = "date_closed")
     @JsonFormat(pattern="yyyy-MM-dd")
+    @Column(name = "date_closed")
     private java.sql.Date dateClosed;
+
+    @Column(name = "name")
+    private String name;
 
 
     public Account() {
     }
 
-    public Account(long linkedUser, double balance, double interestRate, Date dateOpened, Date dateClosed) {
-        this.linkedUsers = linkedUsers;
-
-//        this.linkedUsers.add(userR)
-
+    public Account(double balance, double interestRate, Date dateOpened, String name) {
         this.balance = balance;
         this.interestRate = interestRate;
         this.dateOpened = dateOpened;
-        this.dateClosed = dateClosed;
+        this.name = name;
 
     }
 
@@ -63,5 +63,53 @@ public class Account {
 
     public void setLinkedUsers(Set<User> linkedUsers) {
         this.linkedUsers = linkedUsers;
+    }
+
+    public AccountType getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(AccountType accountType) {
+        this.accountType = accountType;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public double getInterestRate() {
+        return interestRate;
+    }
+
+    public void setInterestRate(double interestRate) {
+        this.interestRate = interestRate;
+    }
+
+    public Date getDateOpened() {
+        return dateOpened;
+    }
+
+    public void setDateOpened(Date dateOpened) {
+        this.dateOpened = dateOpened;
+    }
+
+    public Date getDateClosed() {
+        return dateClosed;
+    }
+
+    public void setDateClosed(Date dateClosed) {
+        this.dateClosed = dateClosed;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

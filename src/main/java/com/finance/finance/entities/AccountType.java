@@ -1,5 +1,7 @@
 package com.finance.finance.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.sql.Date;
 import java.util.Set;
@@ -15,6 +17,7 @@ public class AccountType {
     @Column(name = "account_type")
     private String accountType;
 
+    @JsonIgnore
     @OneToMany(mappedBy="accountType")
     private Set<Account> accounts;
 

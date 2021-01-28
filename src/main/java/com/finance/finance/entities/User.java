@@ -1,5 +1,6 @@
 package com.finance.finance.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.finance.finance.entities.Account;
 
 import javax.persistence.*;
@@ -25,6 +26,7 @@ public class User {
     private String email;
 
 
+    @JsonIgnore
     @ManyToMany
     @JoinTable(
             joinColumns = @JoinColumn(name = "user_id"),
