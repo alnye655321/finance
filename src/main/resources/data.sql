@@ -4,8 +4,8 @@ TRUNCATE  TABLE accounting_periods RESTART IDENTITY;
 
 DROP TABLE accounts_linked_users, user_account, users_linked_accounts,  users;
 
-insert into users (name, hashed_password, email) values ('betty', 'pw', 'a@aol.com');
-insert into users (name, hashed_password, email) values ('sue', 'pw', 'b@aol.com');
+insert into users (name, hashed_password, email) values ('betty', 'pw', 'a@aol.com'); --1
+insert into users (name, hashed_password, email) values ('sue', 'pw', 'b@aol.com'); --2
 
 
 INSERT INTO accounting_periods (start_date, end_date) VALUES ('2021-01-01', '2021-01-15');
@@ -45,4 +45,4 @@ INSERT INTO accounting_periods (start_date, end_date) VALUES ('2021-12-01', '202
 INSERT INTO accounting_periods (start_date, end_date) VALUES ('2021-12-16', '2021-12-31');
 
 
-INSET INTO budget_types (type) VALUES ('Car Payment');
+INSERT INTO budget_types (type) VALUES ('Car Payment'); --1
