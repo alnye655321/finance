@@ -46,12 +46,9 @@ public class SeedController {
     @GetMapping("/seed/{amount}")
     public ResponseEntity<String> getUserById(@PathVariable(value = "amount") Long amount) {
 
-//        seedUsers();
-
-//        seedAccountTypes();
-
-//        seedAccounts();
-
+        seedUsers();
+        seedAccountTypes();
+        seedAccounts();
 
 
         return ResponseEntity.ok().body("Success");

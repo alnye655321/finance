@@ -43,3 +43,6 @@ INSERT INTO accounting_periods (start_date, end_date) VALUES ('2021-11-16', '202
 
 INSERT INTO accounting_periods (start_date, end_date) VALUES ('2021-12-01', '2021-12-15');
 INSERT INTO accounting_periods (start_date, end_date) VALUES ('2021-12-16', '2021-12-31');
+
+
+INSET INTO budget_types (type) VALUES ('Car Payment');
